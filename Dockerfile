@@ -14,7 +14,9 @@ ENV REFRESHED_AT 2015–12–28
 RUN apt-get -qq update # -qq -- no output except for errors
 
 # Install python, python-dev
-RUN apt-get install -y python python-dev
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt-get update
+RUN apt-get install python3.6
 
 # Install wget
 RUN apt-get install -y wget
@@ -23,7 +25,7 @@ RUN apt-get install -y wget
 RUN wget https://bootstrap.pypa.io/get-pip.py
 
 # Install pip
-RUN python get-pip.py
+RUN python3 get-pip.py
 
 # Delete get-pip.py file
 RUN rm get-pip.py
