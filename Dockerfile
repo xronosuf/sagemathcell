@@ -33,6 +33,7 @@ RUN apt-get install -y git
 
 # Install sagecell from GitHub
 RUN pip install git+git://github.com/korniichuk/sagecell#egg=sagecell
+RUN pip install --upgrade sagecell
 
 # Install openssh-server
 RUN apt-get install -y openssh-server
