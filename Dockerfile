@@ -16,7 +16,7 @@ RUN apt-get -qq update # -qq -- no output except for errors
 # Install python, python-dev
 
 # Install stuff to add a ppa.
-RUN sudo apt-get install software-properties-common
+RUN apt-get install -y software-properties-common
 RUN apt-get update
 
 # Add ppa to get python3
@@ -24,7 +24,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update
 
 # Install python3.
-RUN apt-get install python3.6
+RUN apt-get install -y python3.6
 
 # Install wget
 RUN apt-get install -y wget
