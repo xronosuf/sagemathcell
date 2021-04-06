@@ -33,17 +33,17 @@ RUN apt-get install -y wget
 RUN wget https://bootstrap.pypa.io/get-pip.py
 
 # Install pip
-RUN python3 get-pip.py
+RUN python3.6 get-pip3.py
 
 # Delete get-pip.py file
-RUN rm get-pip.py
+RUN rm get-pip3.py
 
 # Install git
 RUN apt-get install -y git
 
 # Install sagecell from GitHub
-RUN pip install git+git://github.com/korniichuk/sagecell#egg=sagecell
-RUN pip install --upgrade sagecell
+RUN pip3 install git+git://github.com/korniichuk/sagecell#egg=sagecell
+RUN pip3 install --upgrade sagecell
 
 # Install openssh-server
 RUN apt-get install -y openssh-server
